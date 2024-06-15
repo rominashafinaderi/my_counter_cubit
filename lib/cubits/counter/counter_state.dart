@@ -4,7 +4,12 @@ class CounterState extends Equatable{
   final int counter;
 
   CounterState({required this.counter});
-  
+
+  @override
+  String toString() {
+    return 'CounterState{counter: $counter}';
+  }
+
   factory CounterState.initial(){
     return CounterState(counter: 0 );
   }
@@ -12,8 +17,6 @@ class CounterState extends Equatable{
   @override
   List<Object?> get props => [counter];
 
- @override
- String toString() => 'CounterState(counter: $counter)';
 
  CounterState copyWith({int? counter}){
   return CounterState(counter: counter ?? this.counter); 
